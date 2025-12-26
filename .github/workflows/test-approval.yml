@@ -1,0 +1,17 @@
+name: test-environment-approval
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  approval-test:
+    runs-on: ubuntu-latest
+
+    # ★ これだけで承認が発動
+    environment: prod
+
+    steps:
+      - name: Approved message
+        run: echo "Deployment approved. This is a test."
+
